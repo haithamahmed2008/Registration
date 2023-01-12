@@ -24,8 +24,8 @@
                                 @enderror
                             </div>
                         </div>
-                        
-                        
+
+
                         {{-- Email --}}
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
@@ -40,9 +40,9 @@
                                 @enderror
                             </div>
                         </div>
-                        
-                        
-                        
+
+
+
                         {{-- Phone --}}
                         <div class="row mb-3">
                             <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone') }}</label>
@@ -63,17 +63,23 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Highest Eduction') }}</label>
 
                             <div class="col-md-6">
-                                <input id="highest_eduction" type="text" class="form-control @error('highest_eduction') is-invalid @enderror" name="highest_eduction" value="{{ old('highest_eduction') }}" required autocomplete="highest_eduction" autofocus>
 
+                                <Select id="highest_eduction" type="text" class="form-control @error('highest_eduction') is-invalid @enderror" name="highest_eduction"  required autocomplete="highest_eduction" autofocus>
+                                    <option {{ old('highest_eduction') === '' ? 'selected' : '' }} value="">---</option>
+                                    <option {{ old('highest_eduction') === 'Secondary' ? 'selected' : '' }} value="Secondary">Secondary</option>
+                                    <option {{ old('highest_eduction') === 'Tertiary' ? 'selected' : '' }} value="Tertiary">Tertiary</option>
+                                    <option {{ old('highest_eduction') === 'Masters' ? 'selected' : '' }} value="Masters">Masters</option>
+                                    <option {{ old('highest_eduction') === 'Doctorate' ? 'selected' : '' }} value="Doctorate">Doctorate</option>
+                                </Select>
                                 @error('highest_eduction')
-                                    <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-                        
-                        
+
+
                         {{-- message --}}
                         <div class="row mb-3">
                             <label for="message" class="col-md-4 col-form-label text-md-end">{{ __('message') }}</label>
@@ -88,12 +94,12 @@
                                 @enderror
                             </div>
                         </div>
-                        
-                        
-                        
-                        
 
-                        
+
+
+
+
+
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
